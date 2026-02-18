@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react'
 
-const API_BASE = 'http://localhost:8000'
+// ...existing code...
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://parkisense.onrender.com/';
+// ...existing code...
 
 function VoiceTest() {
   const [isRecording, setIsRecording] = useState(false)
