@@ -167,3 +167,23 @@ function App() {
 }
 
 export default App
+const runVoiceTest = async () => {
+  try {
+    const response = await fetch(
+      "https://parkisense.onrender.com/run-voice-test",
+      {
+        method: "POST",
+      }
+    );
+
+    const data = await response.json();
+    console.log("Backend Response:", data);
+    alert(JSON.stringify(data));
+  } catch (error) {
+    console.error("Error:", error);
+  }
+};
+<button onClick={runVoiceTest}>
+  Run Voice Test
+</button>
+
